@@ -1,0 +1,93 @@
+{ 
+    "position": "top",
+    "exlusive": "true",
+    "passthrough": "true",
+    "gtk-layer-shell": "true",
+    "margin-top": 10,
+    "margin-left": 10,
+    "margin-right": 10,
+    "height": 41,
+
+    "modules-left": ["hyprland/workspaces"],
+
+    "modules-center": [
+        "clock"
+    ],
+
+    "modules-right": [
+        "network",
+        "battery",
+        "bluetooth",
+        "pulseaudio"
+    ],
+
+    /* Battery config*/
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}",
+        "format-icons": {
+            "default": 
+            ["󰁺", "󰁻", "󰁽", "󰁾", "󰁿", "󰁿", "󰂀", "󰂁", "󰂂", "󱈏"],
+            "charging":
+            ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+        },
+        "tooltip": false
+    },
+    "network": {
+        "interface": "wlp2s0",
+        "format": "{ifname}",
+        "format-wifi": "{essid} ",
+        "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+        "format-disconnected": "Disconnected 󰖪", 
+        "max-length": 50,
+        "tooltip": false,
+        "on-click": "nm-connection-editor"
+    },
+// AOC 25G3ZM WKRN9HA009785, 1920x1080@60, 0x0, 1
+// BNQ BenQ xl2420t H9D01988SL0, 1920x1080@60, 1920x0, 1
+// BNQ BenQ RL2455 41G05864SL0, 1920x1080@60, -1920x0, 1
+
+
+
+    "hyprland/workspaces": 
+    { "format": "{icon}", 
+      "on-click": "activate", 
+      "format-icons": { 
+          "active": "", 
+          "urgent": "", 
+          "persistent": "", 
+          "focused": "", 
+          "default": "" 
+      }
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format": "<span color='#89b4fa'>󰥔 </span><span color='#cdd6f4'>{:%H:%M | %a %d %b}</span>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+
+    "bluetooth": {
+        "on-click": "blueman-manager"
+
+    },
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "<span color='#a6e3a1'>{icon}</span>  <span color='#cdd6f4'>{volume}%</span>",
+        "format-muted": "<span color='#f38ba8'>󰝟 0%</span>",
+        "on-click": "pavucontrol",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "default": [
+                "",
+                "",
+                ""
+            ]
+        },
+        "tooltip": false
+    }
+
+}

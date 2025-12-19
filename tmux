@@ -1,1 +1,0 @@
-/home/arr02/.config/tmux

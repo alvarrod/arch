@@ -1,0 +1,7 @@
+# Connect (fine with vendor/device)
+SUBSYSTEM=="thunderbolt", ATTR{vendor}=="0x7fea", ATTR{device}=="0x1032", ACTION=="add", RUN+="/home/arr02/.config/hypr/scripts/dock_connected.sh"
+
+# Disconnect (match just kernel path)
+SUBSYSTEM=="thunderbolt", KERNEL=="1-0:2.1", ACTION=="remove", RUN+="/home/arr02/.config/hypr/scripts/dock_disconnected.sh"
+
+
