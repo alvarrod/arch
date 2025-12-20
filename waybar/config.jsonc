@@ -75,8 +75,10 @@
         "format-bluetooth": "<span color='#a6e3a1'>{icon}</span>  <span color='#cdd6f4'>{volume}%</span>",
         "format-muted": "<span color='#f38ba8'>󰝟 0%</span>",
         "on-click": "pavucontrol",
-        "on-scroll-up": "wpctl set-volume @DEFAULT_SINK@ 5%+",
-        "on-scroll-down": "wpctl set-volume @DEFAULT_SINK@ 5%-",
+        "on-scroll-up": "wpctl set-mute @DEFAULT_AUDIO_SINK@ 0; wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "~/.config/waybar/scripts/volume_down.sh",
+        "max-volume": 100,
+        "mute-on-zero": true,
         "format-icons": {
             "headphone": "",
             "hands-free": "",
